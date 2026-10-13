@@ -39,44 +39,44 @@
       font-weight: normal;
     }
 
-    .menu-content {
-      max-width: 900px;
-      margin: 60px auto 80px;
+    .menu {
+      max-width: 1000px;
+      margin: 80px auto 0;
       padding: 0 40px;
       display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      justify-content: center;
       gap: 40px;
+      flex-wrap: wrap;
+      text-align: center;
     }
 
-    .column {
-      min-width: 200px;
+    .menu-item {
+      min-width: 140px;
     }
 
-    .column h2 {
-      font-size: 16px;
-      font-weight: normal;
-      letter-spacing: 1px;
-      margin: 0 0 18px 0;
+    .menu-item > a {
+      display: block;
+      text-decoration: none;
       color: #333;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
     }
 
-    .column a {
+    .menu-item > a:hover {
+      color: #6b7c3a;
+    }
+
+    .submenu a {
       display: block;
       text-decoration: none;
       color: #6b7c3a;
-      font-size: 15px;
-      margin-bottom: 12px;
-      transition: color 0.2s;
+      font-size: 14px;
+      margin-bottom: 8px;
     }
 
-    .column a:hover {
+    .submenu a:hover {
       color: #333;
-    }
-
-    .main-link {
-      color: #333 !important;
-      margin-bottom: 16px;
     }
   </style>
 </head>
@@ -87,38 +87,42 @@
     <h1 class="logo">KORENIEVA TAMARA</h1>
   </div>
 
-  <div class="menu-content">
+  <div class="menu">
 
-    <div class="column">
-      <a href="#" class="main-link">About</a>
+    <div class="menu-item">
+      <a href="#">About</a>
     </div>
 
-    <div class="column">
-      <h2>Artistic Series</h2>
-      <a href="#">Out of Darkness</a>
-      <a href="#">Searching for Colors…</a>
-      <a href="#">Photo-Watercolors</a>
-      <a href="#">Collages</a>
+    <div class="menu-item">
+      <a href="#">Artistic Series</a>
+      <div class="submenu">
+        <a href="#">Out of Darkness</a>
+        <a href="#">Searching for Colors…</a>
+        <a href="#">Photo-Watercolors</a>
+        <a href="#">Collages</a>
+      </div>
     </div>
 
-    <div class="column">
-      <a href="#" class="main-link">The Magical World of MACRO</a>
+    <div class="menu-item">
+      <a href="#">Macro</a>
     </div>
 
-    <div class="column">
-      <h2>Photography</h2>
-      <a href="#">Passing By…</a>
-      <a href="#">Rural Life</a>
-      <a href="#">Sviatohirsk, Ukraine — Before 2022</a>
-      <a href="#">By the Oskil River</a>
+    <div class="menu-item">
+      <a href="#">Photography</a>
+      <div class="submenu">
+        <a href="#">Passing By…</a>
+        <a href="#">Rural Life</a>
+        <a href="#">Sviatohirsk, Ukraine — Before 2022</a>
+        <a href="#">By the Oskil River</a>
+      </div>
     </div>
 
-    <div class="column">
-      <a href="#" class="main-link">Video Stories</a>
+    <div class="menu-item">
+      <a href="#">Video</a>
     </div>
 
-    <div class="column">
-      <a href="#" class="main-link">Contact</a>
+    <div class="menu-item">
+      <a href="#">Contact</a>
     </div>
 
   </div>
