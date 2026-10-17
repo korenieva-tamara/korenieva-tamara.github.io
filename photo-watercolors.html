@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Watercolors — Korenieva Tamara</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: #333;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 40px 10px;
+    }
+
+    .close-icon {
+      font-size: 28px;
+      text-decoration: none;
+      color: #333;
+      line-height: 1;
+    }
+
+    .close-icon:hover {
+      color: #6b7c3a;
+    }
+
+    .logo {
+      font-size: 22px;
+      letter-spacing: 3px;
+      color: #6b7c3a;
+      margin: 0;
+      font-weight: normal;
+    }
+
+    .content {
+      max-width: 1200px;
+      margin: 30px auto 80px;
+      padding: 0 40px;
+    }
+
+    .title {
+      font-size: 26px;
+      font-weight: normal;
+      margin-bottom: 12px;
+    }
+
+    .title .accent {
+      color: #b22222;
+    }
+
+    .description {
+      font-size: 15px;
+      color: #555;
+      max-width: 780px;
+      line-height: 1.55;
+      margin-bottom: 36px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 16px;
+    }
+
+    .gallery img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+
+    .gallery img:hover {
+      opacity: 0.88;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.93);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 92%;
+      max-height: 90%;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      color: white;
+      font-size: 36px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top">
+    <a href="menu.html" class="close-icon">×</a>
+    <h1 class="logo">KORENIEVA TAMARA</h1>
+  </div>
+
+  <div class="content">
+    <h2 class="title"><span class="accent">Photo</span> Watercolors</h2>
+    
+    <p class="description">
+      Photo Watercolors — Photography on the Edge of Painting.<br>
+      An original technique in which I paint over the background, clearing the space for what matters most.<br>
+      This is my way of doing more than simply capturing what I see — it is a way of expressing my own sense of beauty.
+    </p>
+
+    <div class="gallery">
+      <img src="1.jpg" alt="1" onclick="openLightbox(this)">
+      <img src="2.jpg" alt="2" onclick="openLightbox(this)">
+      <img src="3.jpg" alt="3" onclick="openLightbox(this)">
+      <img src="4.jpg" alt="4" onclick="openLightbox(this)">
+      <img src="5.jpg" alt="5" onclick="openLightbox(this)">
+      <img src="6.jpg" alt="6" onclick="openLightbox(this)">
+      <img src="7.jpg" alt="7" onclick="openLightbox(this)">
+      <img src="8.jpg" alt="8" onclick="openLightbox(this)">
+      <img src="9.jpg" alt="9" onclick="openLightbox(this)">
+      <img src="10.jpg" alt="10" onclick="openLightbox(this)">
+      <img src="11.jpg" alt="11" onclick="openLightbox(this)">
+      <img src="12.jpg" alt="12" onclick="openLightbox(this)">
+      <img src="13.jpg" alt="13" onclick="openLightbox(this)">
+      <img src="14.jpg" alt="14" onclick="openLightbox(this)">
+      <img src="15.jpg" alt="15" onclick="openLightbox(this)">
+      <img src="16.jpg" alt="16" onclick="openLightbox(this)">
+      <img src="17.jpg" alt="17" onclick="openLightbox(this)">
+      <img src="18.jpg" alt="18" onclick="openLightbox(this)">
+      <img src="19.jpg" alt="19" onclick="openLightbox(this)">
+      <img src="20.jpg" alt="20" onclick="openLightbox(this)">
+      <img src="21.jpg" alt="21" onclick="openLightbox(this)">
+      <img src="22.jpg" alt="22" onclick="openLightbox(this)">
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <a href="#" class="lightbox-close" onclick="closeLightbox(); return false;">×</a>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    function openLightbox(img) {
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+  </script>
+
+</body>
+</html>
