@@ -133,4 +133,40 @@
   </div>
 
   <div class="content">
-    <h2 
+    <h2 class="title">Out of Darkness.</h2>
+    
+    <p class="description">
+      Black is not a color. In physics, it is the absence of light, the absence of color. Emptiness.<br>
+      Perhaps that is why black feels so close to those states in which we seem to feel nothing at all:<br>
+      sadness, exhaustion, silence… And yet, even in black, light always appears.<br>
+      Faint. Quiet. It touches petals, droplets, glass — and suddenly, color is born.
+    </p>
+
+    <div class="gallery">
+      <img src="d1.jpg" alt="1" onclick="openLightbox(this)">
+      <img src="d2.jpg" alt="2" onclick="openLightbox(this)">
+      <img src="d3.jpg" alt="3" onclick="openLightbox(this)">
+      <img src="d4.jpg" alt="4" onclick="openLightbox(this)">
+      <img src="d5.jpg" alt="5" onclick="openLightbox(this)">
+      <img src="d6.jpg" alt="6" onclick="openLightbox(this)">
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <a href="#" class="lightbox-close" onclick="closeLightbox(); return false;">×</a>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    function openLightbox(img) {
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+  </script>
+
+</body>
+</html>
