@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collages — Korenieva Tamara</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: #333;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 40px 10px;
+    }
+
+    .close-icon {
+      font-size: 28px;
+      text-decoration: none;
+      color: #333;
+      line-height: 1;
+    }
+
+    .close-icon:hover {
+      color: #6b7c3a;
+    }
+
+    .logo {
+      font-size: 22px;
+      letter-spacing: 3px;
+      color: #6b7c3a;
+      margin: 0;
+      font-weight: normal;
+    }
+
+    .content {
+      max-width: 1100px;
+      margin: 40px auto 80px;
+      padding: 0 40px;
+    }
+
+    .title {
+      font-size: 26px;
+      font-weight: normal;
+      margin-bottom: 18px;
+      color: #333;
+    }
+
+    .description {
+      font-size: 16px;
+      color: #555;
+      max-width: 780px;
+      line-height: 1.55;
+      margin-bottom: 40px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .gallery img {
+      width: 100%;
+      display: block;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+
+    .gallery img:hover {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 800px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.93);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 92%;
+      max-height: 90%;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      color: white;
+      font-size: 36px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top">
+    <a href="menu.html" class="close-icon">×</a>
+    <h1 class="logo">KORENIEVA TAMARA</h1>
+  </div>
+
+  <div class="content">
+    <h2 class="title">Collages</h2>
+    
+    <p class="description">
+      By bringing photographs together in a collage, I seek to convey more than just a sequence of moments.<br>
+      It is a way of weaving individual moments into a single story, capturing the mood, atmosphere,<br>
+      and feelings of a particular moment in life.
+    </p>
+
+    <div class="gallery">
+      <img src="c1.jpg" alt="Collage 1" onclick="openLightbox(this)">
+      <img src="c2.jpg" alt="Collage 2" onclick="openLightbox(this)">
+      <img src="c3.jpg" alt="Collage 3" onclick="openLightbox(this)">
+      <img src="c4.jpg" alt="Collage 4" onclick="openLightbox(this)">
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <a href="#" class="lightbox-close" onclick="closeLightbox(); return false;">×</a>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    function openLightbox(img) {
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+  </script>
+
+</body>
+</html>
