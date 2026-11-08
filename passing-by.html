@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passing By… — Korenieva Tamara</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: #333;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 40px 10px;
+    }
+
+    .close-icon {
+      font-size: 28px;
+      text-decoration: none;
+      color: #333;
+      line-height: 1;
+    }
+
+    .close-icon:hover {
+      color: #6b7c3a;
+    }
+
+    .logo {
+      font-size: 22px;
+      letter-spacing: 3px;
+      color: #6b7c3a;
+      margin: 0;
+      font-weight: normal;
+    }
+
+    .content {
+      max-width: 1200px;
+      margin: 30px auto 80px;
+      padding: 0 40px;
+    }
+
+    .title {
+      font-size: 26px;
+      font-weight: normal;
+      margin-bottom: 22px;
+      color: #333;
+    }
+
+    .description {
+      font-size: 16px;
+      color: #6b7c3a;
+      max-width: 920px;
+      line-height: 1.65;
+      margin-bottom: 40px;
+    }
+
+    .description p {
+      margin: 0 0 14px 0;
+    }
+
+    .description p:last-child {
+      margin-bottom: 0;
+      font-style: italic;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+
+    .gallery img:hover {
+      opacity: 0.88;
+    }
+
+    @media (max-width: 1000px) {
+      .gallery {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .gallery {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .content {
+        padding: 0 20px;
+      }
+      .top {
+        padding: 20px 20px 8px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.93);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 92%;
+      max-height: 90%;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      color: white;
+      font-size: 36px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top">
+    <a href="menu.html" class="close-icon">×</a>
+    <h1 class="logo">KORENIEVA TAMARA</h1>
+  </div>
+
+  <div class="content">
+    <h2 class="title">Passing By…</h2>
+    
+    <div class="description">
+      <p>Sometimes you are simply going about your day, not looking for anything special. And suddenly, your attention is drawn to something — or someone. A gesture, a glance, an incidental detail… And all at once, you see something in it that goes beyond an ordinary passing moment. It happens in a curious way, entirely beyond your control. Sometimes you notice such moments; other times, you walk right past without seeing anything at all. As if someone unseen occasionally turns on a few frames of a quiet, deeply personal film just for you…</p>
+      <p>These photographs capture precisely those moments — the ones I simply couldn’t walk past.</p>
+    </div>
+
+    <div class="gallery">
+      <img src="w1.jpg" alt="1" onclick="openLightbox(this)">
+      <img src="w2.jpg" alt="2" onclick="openLightbox(this)">
+      <img src="w3.jpg" alt="3" onclick="openLightbox(this)">
+      <img src="w4.jpg" alt="4" onclick="openLightbox(this)">
+      <img src="w5.jpg" alt="5" onclick="openLightbox(this)">
+      <img src="w6.jpg" alt="6" onclick="openLightbox(this)">
+      <img src="w7.jpg" alt="7" onclick="openLightbox(this)">
+      <img src="w8.jpg" alt="8" onclick="openLightbox(this)">
+      <img src="w9.jpg" alt="9" onclick="openLightbox(this)">
+      <img src="w10.jpg" alt="10" onclick="openLightbox(this)">
+      <img src="w11.jpg" alt="11" onclick="openLightbox(this)">
+      <img src="w12.jpg" alt="12" onclick="openLightbox(this)">
+      <img src="w13.jpg" alt="13" onclick="openLightbox(this)">
+      <img src="w14.jpg" alt="14" onclick="openLightbox(this)">
+      <img src="w15.jpg" alt="15" onclick="openLightbox(this)">
+      <img src="w16.jpg" alt="16" onclick="openLightbox(this)">
+      <img src="w17.jpg" alt="17" onclick="openLightbox(this)">
+      <img src="w18.jpg" alt="18" onclick="openLightbox(this)">
+      <img src="w19.jpg" alt="19" onclick="openLightbox(this)">
+      <img src="w20.jpg" alt="20" onclick="openLightbox(this)">
+      <img src="w21.jpg" alt="21" onclick="openLightbox(this)">
+      <img src="w22.jpg" alt="22" onclick="openLightbox(this)">
+      <img src="w23.jpg" alt="23" onclick="openLightbox(this)">
+      <img src="w24.jpg" alt="24" onclick="openLightbox(this)">
+      <img src="w25.jpg" alt="25" onclick="openLightbox(this)">
+      <img src="w26.jpg" alt="26" onclick="openLightbox(this)">
+      <img src="w27.jpg" alt="27" onclick="openLightbox(this)">
+      <img src="w28.jpg" alt="28" onclick="openLightbox(this)">
+      <img src="w29.jpg" alt="29" onclick="openLightbox(this)">
+      <img src="w30.jpg" alt="30" onclick="openLightbox(this)">
+      <img src="w31.jpg" alt="31" onclick="openLightbox(this)">
+      <img src="w32.jpg" alt="32" onclick="openLightbox(this)">
+      <img src="w33.jpg" alt="33" onclick="openLightbox(this)">
+      <img src="w34.jpg" alt="34" onclick="openLightbox(this)">
+      <img src="w35.jpg" alt="35" onclick="openLightbox(this)">
+      <img src="w36.jpg" alt="36" onclick="openLightbox(this)">
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <a href="#" class="lightbox-close" onclick="closeLightbox(); return false;">×</a>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    function openLightbox(img) {
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+  </script>
+
+</body>
+</html>
