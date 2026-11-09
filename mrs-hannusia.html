@@ -56,14 +56,14 @@
       color: #6b7c3a;
       max-width: 1000px;
       line-height: 1.6;
-      margin-bottom: 32px;
+      margin-bottom: 50px;
     }
 
     .gallery {
       display: flex;
       flex-wrap: nowrap;
       gap: 12px;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: flex-start;
       overflow-x: auto;
     }
@@ -91,6 +91,7 @@
     @media (max-width: 800px) {
       .gallery {
         flex-wrap: wrap;
+        justify-content: center;
       }
       .gallery img {
         height: 200px;
@@ -173,18 +174,3 @@
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <a href="#" class="lightbox-close" onclick="closeLightbox(); return false;">×</a>
     <img id="lightbox-img" src="" alt="">
-  </div>
-
-  <script>
-    function openLightbox(img) {
-      document.getElementById('lightbox-img').src = img.src;
-      document.getElementById('lightbox').classList.add('active');
-    }
-
-    function closeLightbox() {
-      document.getElementById('lightbox').classList.remove('active');
-    }
-  </script>
-
-</body>
-</html>
