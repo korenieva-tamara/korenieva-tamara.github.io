@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mrs. Hannusia — Korenieva Tamara</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: #333;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 40px 8px;
+    }
+
+    .close-icon {
+      font-size: 26px;
+      text-decoration: none;
+      color: #333;
+      line-height: 1;
+    }
+
+    .close-icon:hover {
+      color: #6b7c3a;
+    }
+
+    .logo {
+      font-size: 20px;
+      letter-spacing: 3px;
+      color: #6b7c3a;
+      margin: 0;
+      font-weight: normal;
+    }
+
+    .content {
+      max-width: 1200px;
+      margin: 20px auto 60px;
+      padding: 0 40px;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: normal;
+      margin: 0 0 16px 0;
+      color: #333;
+    }
+
+    .description {
+      font-size: 15.5px;
+      color: #6b7c3a;
+      max-width: 980px;
+      line-height: 1.6;
+      margin-bottom: 36px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    .gallery img {
+      height: 280px;
+      width: auto;
+      max-width: 100%;
+      display: block;
+      cursor: pointer;
+      transition: opacity 0.25s;
+      object-fit: contain;
+    }
+
+    .gallery img:hover {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 900px) {
+      .gallery img {
+        height: 220px;
+      }
+      .content {
+        padding: 0 24px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        gap: 10px;
+      }
+      .gallery img {
+        height: 180px;
+      }
+      .top {
+        padding: 16px 20px 6px;
+      }
+      .content {
+        padding: 0 16px;
+      }
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.93);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 92%;
+      max-height: 90%;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      color: white;
+      font-size: 36px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top">
+    <a href="menu.html" class="close-icon">×</a>
+    <h1 class="logo">KORENIEVA TAMARA</h1>
+  </div>
+
+  <div class="content">
+    <h2 class="title">Mrs. Hannusia</h2>
+    
+    <div class="description">
+      On the outskirts of the village of Rosilna, where the mountains begin, there once stood a small, lonely cottage. It was home to Mrs. Hannusia. One day, eleven people with cameras came to visit her… And she happily welcomed them, offering them apples. Some people leave an impression that lasts far longer than the moment itself. Mrs. Hannusia was one of them. Love shone in her eyes, kindness lived in her heart, and her simple hospitality held so much warmth that it has stayed with me through all these years.
+    </div>
+
+    <div class="gallery">
+      <img src="g1.jpg" alt="Mrs. Hannusia 1" onclick="openLightbox(this)">
+      <img src="g2.jpg" alt="Mrs. Hannusia 2" onclick="openLightbox(this)">
+      <img src="g3.jpg" alt="Mrs. Hannusia 3" onclick="openLightbox(this)">
+      <img src="g4.jpg" alt="Mrs. Hannusia 4" onclick="openLightbox(this)">
+      <img src="g5.jpg" alt="Mrs. Hannusia 5" onclick="openLightbox(this)">
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <a href="#" class="lightbox-close" onclick="closeLightbox(); return false;">×</a>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    function openLightbox(img) {
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+  </script>
+
+</body>
+</html>
