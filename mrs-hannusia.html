@@ -174,3 +174,18 @@
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <a href="#" class="lightbox-close" onclick="closeLightbox(); return false;">×</a>
     <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    function openLightbox(img) {
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+  </script>
+
+</body>
+</html>
