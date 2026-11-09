@@ -39,7 +39,7 @@
     }
 
     .content {
-      max-width: 1280px;
+      max-width: 1200px;
       margin: 20px auto 60px;
       padding: 0 30px;
     }
@@ -56,22 +56,24 @@
       color: #6b7c3a;
       max-width: 1000px;
       line-height: 1.6;
-      margin-bottom: 50px;
+      margin-bottom: 55px;
+    }
+
+    .gallery-wrapper {
+      display: flex;
+      justify-content: center;
+      width: 100%;
     }
 
     .gallery {
       display: flex;
-      flex-wrap: nowrap;
       gap: 12px;
-      justify-content: center;
       align-items: flex-start;
-      overflow-x: auto;
     }
 
     .gallery img {
-      height: 260px;
+      height: 250px;
       width: auto;
-      flex-shrink: 1;
       display: block;
       cursor: pointer;
       transition: opacity 0.25s;
@@ -84,7 +86,7 @@
 
     @media (max-width: 1100px) {
       .gallery img {
-        height: 210px;
+        height: 200px;
       }
     }
 
@@ -94,7 +96,7 @@
         justify-content: center;
       }
       .gallery img {
-        height: 200px;
+        height: 180px;
       }
       .content {
         padding: 0 20px;
@@ -103,7 +105,7 @@
 
     @media (max-width: 500px) {
       .gallery img {
-        height: 160px;
+        height: 150px;
       }
       .top {
         padding: 16px 16px 6px;
@@ -162,12 +164,14 @@
       On the outskirts of the village of Rosilna, where the mountains begin, there once stood a small, lonely cottage. It was home to Mrs. Hannusia. One day, eleven people with cameras came to visit her… And she happily welcomed them, offering them apples. Some people leave an impression that lasts far longer than the moment itself. Mrs. Hannusia was one of them. Love shone in her eyes, kindness lived in her heart, and her simple hospitality held so much warmth that it has stayed with me through all these years.
     </div>
 
-    <div class="gallery">
-      <img src="g1.jpg" alt="Mrs. Hannusia 1" onclick="openLightbox(this)">
-      <img src="g2.jpg" alt="Mrs. Hannusia 2" onclick="openLightbox(this)">
-      <img src="g3.jpg" alt="Mrs. Hannusia 3" onclick="openLightbox(this)">
-      <img src="g4.jpg" alt="Mrs. Hannusia 4" onclick="openLightbox(this)">
-      <img src="g5.jpg" alt="Mrs. Hannusia 5" onclick="openLightbox(this)">
+    <div class="gallery-wrapper">
+      <div class="gallery">
+        <img src="g1.jpg" alt="Mrs. Hannusia 1" onclick="openLightbox(this)">
+        <img src="g2.jpg" alt="Mrs. Hannusia 2" onclick="openLightbox(this)">
+        <img src="g3.jpg" alt="Mrs. Hannusia 3" onclick="openLightbox(this)">
+        <img src="g4.jpg" alt="Mrs. Hannusia 4" onclick="openLightbox(this)">
+        <img src="g5.jpg" alt="Mrs. Hannusia 5" onclick="openLightbox(this)">
+      </div>
     </div>
   </div>
 
