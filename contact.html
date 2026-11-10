@@ -8,99 +8,133 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: white;
+      background-color: #111;
       color: #333;
+      height: 100vh;
+      overflow: hidden;
     }
 
     .top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 28px 40px 10px;
+      padding: 24px 40px;
     }
 
     .close-icon {
-      font-size: 28px;
+      font-size: 26px;
       text-decoration: none;
-      color: #333;
+      color: white;
       line-height: 1;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
     }
 
     .close-icon:hover {
-      color: #6b7c3a;
+      color: #c5d4a0;
     }
 
     .logo {
-      font-size: 22px;
+      font-size: 20px;
       letter-spacing: 3px;
-      color: #6b7c3a;
+      color: white;
       margin: 0;
       font-weight: normal;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
     }
 
-    .content {
-      max-width: 700px;
-      margin: 60px auto 80px;
-      padding: 0 40px;
-      text-align: center;
-    }
-
-    .photo {
-      width: 260px;
-      margin: 0 auto 30px;
-    }
-
-    .photo img {
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      display: block;
-      border-radius: 4px;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.35);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.92);
+      padding: 48px 56px;
+      text-align: center;
+      max-width: 420px;
+      width: 85%;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
     }
 
     .title {
-      font-size: 26px;
+      font-size: 28px;
       font-weight: normal;
-      margin-bottom: 16px;
+      margin: 0 0 18px 0;
       color: #333;
     }
 
     .text {
       font-size: 16px;
       color: #555;
-      line-height: 1.5;
-      margin-bottom: 28px;
+      line-height: 1.55;
+      margin: 0 0 28px 0;
     }
 
     .email {
       font-size: 18px;
       color: #6b7c3a;
       text-decoration: none;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
     }
 
     .email:hover {
       text-decoration: underline;
     }
+
+    @media (max-width: 600px) {
+      .top {
+        padding: 18px 20px;
+      }
+      .card {
+        padding: 36px 28px;
+      }
+      .title {
+        font-size: 24px;
+      }
+    }
   </style>
 </head>
 <body>
+
+  <img src="contact-bg.jpg" alt="" class="background">
 
   <div class="top">
     <a href="menu.html" class="close-icon">×</a>
     <h1 class="logo">KORENIEVA TAMARA</h1>
   </div>
 
-  <div class="content">
-    <div class="photo">
-      <img src="contact-photo.jpg" alt="Korenieva Tamara">
+  <div class="overlay">
+    <div class="card">
+      <h2 class="title">Contact</h2>
+      <p class="text">
+        If you would like to get in touch,<br>
+        feel free to write to me.
+      </p>
+      <a class="email" href="mailto:KTA0711gm@gmail.com">KTA0711gm@gmail.com</a>
     </div>
-
-    <h2 class="title">Contact</h2>
-
-    <p class="text">
-      If you would like to get in touch, feel free to write to me.
-    </p>
-
-    <a class="email" href="mailto:KTA0711gm@gmail.com">KTA0711gm@gmail.com</a>
   </div>
 
 </body>
