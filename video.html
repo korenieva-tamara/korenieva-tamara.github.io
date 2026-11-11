@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My heart is with them forever… — Korenieva Tamara</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: #333;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 40px 8px;
+    }
+
+    .close-icon {
+      font-size: 26px;
+      text-decoration: none;
+      color: #333;
+      line-height: 1;
+    }
+
+    .close-icon:hover {
+      color: #6b7c3a;
+    }
+
+    .logo {
+      font-size: 20px;
+      letter-spacing: 3px;
+      color: #6b7c3a;
+      margin: 0;
+      font-weight: normal;
+    }
+
+    .content {
+      max-width: 820px;
+      margin: 20px auto 80px;
+      padding: 0 30px;
+    }
+
+    .title {
+      font-size: 26px;
+      font-weight: normal;
+      margin: 0 0 28px 0;
+      color: #333;
+      line-height: 1.35;
+    }
+
+    .epigraph {
+      font-size: 15.5px;
+      color: #6b7c3a;
+      line-height: 1.65;
+      margin-bottom: 50px;
+    }
+
+    .epigraph p {
+      margin: 0 0 16px 0;
+    }
+
+    .epigraph p:last-child {
+      margin-bottom: 0;
+    }
+
+    .video-block {
+      margin-bottom: 48px;
+    }
+
+    .video-block:last-child {
+      margin-bottom: 20px;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Для Shorts робимо більш квадратний формат */
+    .video-wrapper.short {
+      padding-bottom: 125%;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    .caption {
+      font-size: 15px;
+      color: #555;
+      margin-top: 12px;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 600px) {
+      .top {
+        padding: 16px 20px 6px;
+      }
+      .content {
+        padding: 0 18px;
+      }
+      .title {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top">
+    <a href="menu.html" class="close-icon">×</a>
+    <h1 class="logo">KORENIEVA TAMARA</h1>
+  </div>
+
+  <div class="content">
+    <h2 class="title">My heart is with them forever…</h2>
+
+    <div class="epigraph">
+      <p>During the two years I spent volunteering at the hospital, I met many young men. Each of them had their own story, their own pain, their own struggles, and their own path forward.</p>
+      <p>I remember every one of them. Our conversations, the moments we shared, our walks, photographs, songs… I remember their smiles and their eyes, the moments when things felt a little easier, and those when I especially wanted to be there for them.</p>
+      <p>I love each and every one of them. And I am genuinely happy whenever someone finds their place in this new chapter of life as a veteran, discovers new opportunities, returns to something they love, or finds something entirely new. I rejoice in every step forward, big or small.</p>
+      <p>And it hurts deeply when things don’t work out, when life brings someone yet another difficult challenge. Because behind every one of these stories, I see not just someone I once knew, but a person who has become close to my heart.</p>
+      <p>Perhaps this is the most precious thing I have taken away from those two years: people do not disappear from our lives simply because our days together have come to an end or circumstances have changed.</p>
+      <p>They remain in our memories, in photographs, in videos, in warm recollections. And in our hearts.</p>
+      <p>Thank you, each and every one of you, for our meeting. For your trust. For allowing me to be a small part of your lives.</p>
+    </div>
+
+    <!-- Video 1 -->
+    <div class="video-block">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/cAtdLJLmYX0" allowfullscreen></iframe>
+      </div>
+      <div class="caption">Outdoor photography session near the hospital</div>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="video-block">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/XD6SrYU2DPI" allowfullscreen></iframe>
+      </div>
+      <div class="caption">Photographing flowers by the hospital flowerbed with Roma in spring</div>
+    </div>
+
+    <!-- Video 3 (Short) -->
+    <div class="video-block">
+      <div class="video-wrapper short">
+        <iframe src="https://www.youtube.com/embed/xI_dZUqMWik" allowfullscreen></iframe>
+      </div>
+      <div class="caption">Grisha sings Vakarchuk’s “Oberih”, Alina joins in</div>
+    </div>
+
+    <!-- Video 4 -->
+    <div class="video-block">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/6CLDTzqZ4zw" allowfullscreen></iframe>
+      </div>
+      <div class="caption">Oleksandr Tereshchenko, defender of Donetsk Airport, visiting the hospital</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
