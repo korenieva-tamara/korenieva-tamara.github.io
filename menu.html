@@ -14,13 +14,12 @@
       position: relative;
     }
 
-    /* Смуга з фіалками тільки внизу */
     .flowers {
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 28vh;           /* висота квіткової смуги */
+      height: 28vh;
       object-fit: cover;
       object-position: center;
       z-index: 1;
@@ -58,80 +57,6 @@
       font-weight: normal;
     }
 
-    /* ===== МЕТЕЛИК ===== */
-    .butterfly-wrapper {
-      position: absolute;
-      top: 78px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 25;
-      width: 46px;
-      height: 38px;
-      pointer-events: none;
-    }
-
-    .butterfly {
-      width: 46px;
-      height: 38px;
-      position: relative;
-    }
-
-    .wing {
-      position: absolute;
-      width: 21px;
-      height: 26px;
-      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    }
-
-    .wing.left {
-      left: 2px;
-      background: linear-gradient(135deg, #ff6b9d, #c44dff, #6b7c3a);
-      transform-origin: right center;
-      animation: flapLeft 0.38s ease-in-out infinite alternate;
-    }
-
-    .wing.right {
-      right: 2px;
-      background: linear-gradient(225deg, #ff6b9d, #c44dff, #6b7c3a);
-      transform-origin: left center;
-      animation: flapRight 0.38s ease-in-out infinite alternate;
-    }
-
-    .body {
-      position: absolute;
-      left: 50%;
-      top: 7px;
-      width: 4.5px;
-      height: 20px;
-      background: #333;
-      border-radius: 3px;
-      transform: translateX(-50%);
-      z-index: 2;
-    }
-
-    .antenna {
-      position: absolute;
-      width: 1.5px;
-      height: 11px;
-      background: #333;
-      top: 2px;
-      border-radius: 1px;
-    }
-
-    .antenna.left  { left: 17px;  transform: rotate(-28deg); }
-    .antenna.right { right: 17px; transform: rotate(28deg); }
-
-    @keyframes flapLeft {
-      from { transform: rotateY(0deg) scaleX(1); }
-      to   { transform: rotateY(58deg) scaleX(0.82); }
-    }
-
-    @keyframes flapRight {
-      from { transform: rotateY(0deg) scaleX(1); }
-      to   { transform: rotateY(-58deg) scaleX(0.82); }
-    }
-    /* ===== кінець метелика ===== */
-
     .menu-wrapper {
       position: absolute;
       top: 0;
@@ -142,7 +67,7 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      padding-top: 150px;
+      padding-top: 140px;
       box-sizing: border-box;
     }
 
@@ -186,13 +111,88 @@
       color: #333;
     }
 
+    /* ===== ТРИ МЕТЕЛИКИ ===== */
+    .butterflies {
+      position: absolute;
+      bottom: 32vh;          /* трохи вище квітів */
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 48px;
+      z-index: 15;
+      pointer-events: none;
+    }
+
+    .bf {
+      width: 28px;
+      height: 24px;
+      position: relative;
+    }
+
+    .bf .wing {
+      position: absolute;
+      width: 13px;
+      height: 16px;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    }
+
+    .bf .wing.left {
+      left: 1px;
+      transform-origin: right center;
+      animation: flapLeft 0.4s ease-in-out infinite alternate;
+    }
+
+    .bf .wing.right {
+      right: 1px;
+      transform-origin: left center;
+      animation: flapRight 0.4s ease-in-out infinite alternate;
+    }
+
+    .bf .body {
+      position: absolute;
+      left: 50%;
+      top: 4px;
+      width: 3px;
+      height: 13px;
+      background: #333;
+      border-radius: 2px;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+
+    /* Кольори */
+    .bf.purple .wing {
+      background: linear-gradient(135deg, #c44dff, #9b59b6);
+    }
+    .bf.yellow .wing {
+      background: linear-gradient(135deg, #ffd700, #f1c40f);
+    }
+    .bf.green .wing {
+      background: linear-gradient(135deg, #6b7c3a, #8bc34a);
+    }
+
+    @keyframes flapLeft {
+      from { transform: rotateY(0deg) scaleX(1); }
+      to   { transform: rotateY(55deg) scaleX(0.8); }
+    }
+
+    @keyframes flapRight {
+      from { transform: rotateY(0deg) scaleX(1); }
+      to   { transform: rotateY(-55deg) scaleX(0.8); }
+    }
+    /* ===== кінець метеликів ===== */
+
     @media (max-width: 900px) {
       .menu {
         flex-wrap: wrap;
         gap: 28px;
       }
       .menu-wrapper {
-        padding-top: 140px;
+        padding-top: 130px;
+      }
+      .butterflies {
+        gap: 36px;
+        bottom: 28vh;
       }
       .flowers {
         height: 24vh;
@@ -204,16 +204,17 @@
         padding: 18px 20px;
       }
       .menu-wrapper {
-        padding-top: 125px;
+        padding-top: 115px;
         padding-left: 14px;
         padding-right: 14px;
       }
       .menu-item > a {
         font-size: 17px;
       }
-      .butterfly-wrapper {
-        top: 68px;
-        transform: translateX(-50%) scale(0.88);
+      .butterflies {
+        gap: 28px;
+        bottom: 25vh;
+        transform: translateX(-50%) scale(0.9);
       }
       .flowers {
         height: 22vh;
@@ -223,23 +224,11 @@
 </head>
 <body>
 
-  <!-- Смуга з фіалками внизу -->
   <img src="menu-bg.jpg" alt="" class="flowers">
 
   <div class="top">
     <a href="index.html" class="close-icon">×</a>
     <h1 class="logo">KORENIEVA TAMARA</h1>
-  </div>
-
-  <!-- Метелик -->
-  <div class="butterfly-wrapper">
-    <div class="butterfly">
-      <div class="antenna left"></div>
-      <div class="antenna right"></div>
-      <div class="wing left"></div>
-      <div class="wing right"></div>
-      <div class="body"></div>
-    </div>
   </div>
 
   <div class="menu-wrapper">
@@ -281,6 +270,25 @@
         <a href="contact.html">Contact</a>
       </div>
 
+    </div>
+  </div>
+
+  <!-- Три маленькі метелики між меню і фіалками -->
+  <div class="butterflies">
+    <div class="bf purple">
+      <div class="wing left"></div>
+      <div class="wing right"></div>
+      <div class="body"></div>
+    </div>
+    <div class="bf yellow">
+      <div class="wing left"></div>
+      <div class="wing right"></div>
+      <div class="body"></div>
+    </div>
+    <div class="bf green">
+      <div class="wing left"></div>
+      <div class="wing right"></div>
+      <div class="body"></div>
     </div>
   </div>
 
