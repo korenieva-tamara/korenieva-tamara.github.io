@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,6 +38,12 @@
       padding: 24px 40px;
     }
 
+    .left-controls {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
     .close-icon {
       font-size: 26px;
       text-decoration: none;
@@ -47,6 +53,27 @@
 
     .close-icon:hover {
       color: #6b7c3a;
+    }
+
+    .lang-switch {
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      color: #888;
+      user-select: none;
+    }
+
+    .lang-switch span {
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .lang-switch span:hover {
+      color: #6b7c3a;
+    }
+
+    .lang-switch .active {
+      color: #333;
+      font-weight: 600;
     }
 
     .logo {
@@ -114,7 +141,7 @@
     /* ===== ТРИ МЕТЕЛИКИ ===== */
     .butterflies {
       position: absolute;
-      bottom: 35vh;          /* трохи вище квітів */
+      bottom: 35vh;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
@@ -160,7 +187,6 @@
       z-index: 2;
     }
 
-    /* Кольори */
     .bf.purple .wing {
       background: linear-gradient(135deg, #c44dff, #9b59b6);
     }
@@ -180,7 +206,6 @@
       from { transform: rotateY(0deg) scaleX(1); }
       to   { transform: rotateY(-55deg) scaleX(0.8); }
     }
-    /* ===== кінець метеликів ===== */
 
     @media (max-width: 900px) {
       .menu {
@@ -202,6 +227,12 @@
     @media (max-width: 600px) {
       .top {
         padding: 18px 20px;
+      }
+      .left-controls {
+        gap: 14px;
+      }
+      .lang-switch {
+        font-size: 13px;
       }
       .menu-wrapper {
         padding-top: 115px;
@@ -227,7 +258,14 @@
   <img src="menu-bg.jpg" alt="" class="flowers">
 
   <div class="top">
-    <a href="index.html" class="close-icon">×</a>
+    <div class="left-controls">
+      <a href="index.html" class="close-icon">×</a>
+      <div class="lang-switch">
+        <span data-lang="en" class="active">EN</span>
+        <span> | </span>
+        <span data-lang="uk">УКР</span>
+      </div>
+    </div>
     <h1 class="logo">KORENIEVA TAMARA</h1>
   </div>
 
@@ -235,45 +273,45 @@
     <div class="menu">
 
       <div class="menu-item">
-        <a href="about.html">About</a>
+        <a href="about.html" data-i18n="about">About</a>
       </div>
 
       <div class="menu-item">
-        <a href="#">Artistic Series</a>
+        <a href="#" data-i18n="artistic">Artistic Series</a>
         <div class="submenu">
-          <a href="out-of-darkness.html">Out of Darkness</a>
-          <a href="colors.html">Searching for Colors…</a>
-          <a href="photo-watercolors.html">Photo-Watercolors</a>
-          <a href="collages.html">Collages</a>
+          <a href="out-of-darkness.html" data-i18n="out-of-darkness">Out of Darkness</a>
+          <a href="colors.html" data-i18n="colors">Searching for Colors…</a>
+          <a href="photo-watercolors.html" data-i18n="photo-watercolors">Photo-Watercolors</a>
+          <a href="collages.html" data-i18n="collages">Collages</a>
         </div>
       </div>
 
       <div class="menu-item">
-        <a href="macro.html">Macro</a>
+        <a href="macro.html" data-i18n="macro">Macro</a>
       </div>
 
       <div class="menu-item">
-        <a href="#">Photography</a>
+        <a href="#" data-i18n="photography">Photography</a>
         <div class="submenu">
-          <a href="passing-by.html">Passing By…</a>
-          <a href="rural-life.html">Rural Life</a>
-          <a href="sviatohirsk.html">Sviatohirsk, Ukraine — Before 2022</a>
-          <a href="mrs-hannusia.html">Mrs. Hannusia</a>
+          <a href="passing-by.html" data-i18n="passing-by">Passing By…</a>
+          <a href="rural-life.html" data-i18n="rural-life">Rural Life</a>
+          <a href="sviatohirsk.html" data-i18n="sviatohirsk">Sviatohirsk, Ukraine — Before 2022</a>
+          <a href="mrs-hannusia.html" data-i18n="mrs-hannusia">Mrs. Hannusia</a>
         </div>
       </div>
 
       <div class="menu-item">
-        <a href="video.html">Video</a>
+        <a href="video.html" data-i18n="video">Video</a>
       </div>
 
       <div class="menu-item">
-        <a href="contact.html">Contact</a>
+        <a href="contact.html" data-i18n="contact">Contact</a>
       </div>
 
     </div>
   </div>
 
-  <!-- Три маленькі метелики між меню і фіалками -->
+  <!-- Три маленькі метелики -->
   <div class="butterflies">
     <div class="bf purple">
       <div class="wing left"></div>
@@ -291,6 +329,76 @@
       <div class="body"></div>
     </div>
   </div>
+
+  <script>
+    const translations = {
+      en: {
+        about: "About",
+        artistic: "Artistic Series",
+        "out-of-darkness": "Out of Darkness",
+        colors: "Searching for Colors…",
+        "photo-watercolors": "Photo-Watercolors",
+        collages: "Collages",
+        macro: "Macro",
+        photography: "Photography",
+        "passing-by": "Passing By…",
+        "rural-life": "Rural Life",
+        sviatohirsk: "Sviatohirsk, Ukraine — Before 2022",
+        "mrs-hannusia": "Mrs. Hannusia",
+        video: "Video",
+        contact: "Contact"
+      },
+      uk: {
+        about: "Про мене",
+        artistic: "Художні серії",
+        "out-of-darkness": "З темряви",
+        colors: "У пошуках кольорів…",
+        "photo-watercolors": "Фото-акварелі",
+        collages: "Колажі",
+        macro: "Макро",
+        photography: "Фотографія",
+        "passing-by": "Минаючи…",
+        "rural-life": "Сільське життя",
+        sviatohirsk: "Святогірськ, Україна — до 2022",
+        "mrs-hannusia": "Пані Ганнуся",
+        video: "Відео",
+        contact: "Контакти"
+      }
+    };
+
+    const langSwitch = document.querySelector('.lang-switch');
+    const langButtons = langSwitch.querySelectorAll('[data-lang]');
+    const elements = document.querySelectorAll('[data-i18n]');
+
+    function setLanguage(lang) {
+      localStorage.setItem('siteLang', lang);
+      document.documentElement.lang = lang;
+
+      // Підсвітка перемикача
+      langButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+
+      // Переклад елементів
+      elements.forEach(el => {
+        const key = el.dataset.i18n;
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+    }
+
+    // Ініціалізація
+    const savedLang = localStorage.getItem('siteLang') || 'en';
+    setLanguage(savedLang);
+
+    // Клік
+    langButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        setLanguage(btn.dataset.lang);
+      });
+    });
+  </script>
 
 </body>
 </html>
