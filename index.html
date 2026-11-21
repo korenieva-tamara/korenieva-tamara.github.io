@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +23,12 @@
       flex-shrink: 0;
     }
 
+    .left-controls {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
     .menu-icon {
       font-size: 28px;
       text-decoration: none;
@@ -32,6 +38,27 @@
 
     .menu-icon:hover {
       color: #6b7c3a;
+    }
+
+    .lang-switch {
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      color: #888;
+      user-select: none;
+    }
+
+    .lang-switch span {
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .lang-switch span:hover {
+      color: #6b7c3a;
+    }
+
+    .lang-switch .active {
+      color: #333;
+      font-weight: 600;
     }
 
     .logo {
@@ -67,12 +94,31 @@
       flex-shrink: 0;
       display: block;
     }
+
+    @media (max-width: 600px) {
+      .top {
+        padding: 20px 20px 8px;
+      }
+      .left-controls {
+        gap: 14px;
+      }
+      .lang-switch {
+        font-size: 13px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <div class="top">
-    <a href="menu.html" class="menu-icon">☰</a>
+    <div class="left-controls">
+      <a href="menu.html" class="menu-icon">☰</a>
+      <div class="lang-switch">
+        <span data-lang="en" class="active">EN</span>
+        <span> | </span>
+        <span data-lang="uk">УКР</span>
+      </div>
+    </div>
     <h1 class="logo">KORENIEVA TAMARA</h1>
   </div>
 
@@ -90,8 +136,37 @@
   </div>
 
   <script>
+    // ===== Мова =====
+    const langSwitch = document.querySelector('.lang-switch');
+    const langButtons = langSwitch.querySelectorAll('[data-lang]');
+
+    function setLanguage(lang) {
+      localStorage.setItem('siteLang', lang);
+      document.documentElement.lang = lang;
+
+      langButtons.forEach(btn => {
+        if (btn.dataset.lang === lang) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+    }
+
+    // Ініціалізація
+    const savedLang = localStorage.getItem('siteLang') || 'en';
+    setLanguage(savedLang);
+
+    // Клік по перемикачу
+    langButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        setLanguage(btn.dataset.lang);
+      });
+    });
+
+    // ===== Слайдер =====
     const slides = document.getElementById('slides');
-    const totalReal = 4; // справжніх картинок
+    const totalReal = 4;
     let index = 0;
 
     setInterval(() => {
@@ -99,7 +174,6 @@
       slides.style.transition = 'transform 1s ease-in-out';
       slides.style.transform = `translateX(-${index * 100}%)`;
 
-      // коли дійшли до дубліката першої — миттєво повертаємось на справжню першу
       if (index === totalReal) {
         setTimeout(() => {
           slides.style.transition = 'none';
