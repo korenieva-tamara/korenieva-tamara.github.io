@@ -38,12 +38,6 @@
       padding: 24px 40px;
     }
 
-    .left-controls {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
     .close-icon {
       font-size: 26px;
       text-decoration: none;
@@ -53,27 +47,6 @@
 
     .close-icon:hover {
       color: #6b7c3a;
-    }
-
-    .lang-switch {
-      font-size: 14px;
-      letter-spacing: 0.5px;
-      color: #888;
-      user-select: none;
-    }
-
-    .lang-switch span {
-      cursor: pointer;
-      transition: color 0.2s;
-    }
-
-    .lang-switch span:hover {
-      color: #6b7c3a;
-    }
-
-    .lang-switch .active {
-      color: #333;
-      font-weight: 600;
     }
 
     .logo {
@@ -228,12 +201,6 @@
       .top {
         padding: 18px 20px;
       }
-      .left-controls {
-        gap: 14px;
-      }
-      .lang-switch {
-        font-size: 13px;
-      }
       .menu-wrapper {
         padding-top: 115px;
         padding-left: 14px;
@@ -258,14 +225,7 @@
   <img src="menu-bg.jpg" alt="" class="flowers">
 
   <div class="top">
-    <div class="left-controls">
-      <a href="index.html" class="close-icon">×</a>
-      <div class="lang-switch">
-        <span data-lang="en" class="active">EN</span>
-        <span> | </span>
-        <span data-lang="uk">УКР</span>
-      </div>
-    </div>
+    <a href="index.html" class="close-icon">×</a>
     <h1 class="logo">KORENIEVA TAMARA</h1>
   </div>
 
@@ -353,12 +313,12 @@
         artistic: "Художні серії",
         "out-of-darkness": "З темряви",
         colors: "У пошуках кольорів…",
-        "photo-watercolors": "Фото-акварелі",
+        "photo-watercolors": "Фотоакварелі",
         collages: "Колажі",
         macro: "Макро",
         photography: "Фотографія",
-        "passing-by": "Минаючи…",
-        "rural-life": "Сільське життя",
+        "passing-by": "Проходячи повз…",
+        "rural-life": "В селі…",
         sviatohirsk: "Святогірськ, Україна — до 2022",
         "mrs-hannusia": "Пані Ганнуся",
         video: "Відео",
@@ -366,38 +326,22 @@
       }
     };
 
-    const langSwitch = document.querySelector('.lang-switch');
-    const langButtons = langSwitch.querySelectorAll('[data-lang]');
     const elements = document.querySelectorAll('[data-i18n]');
 
     function setLanguage(lang) {
-      localStorage.setItem('siteLang', lang);
       document.documentElement.lang = lang;
 
-      // Підсвітка перемикача
-      langButtons.forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
-      });
-
-      // Переклад елементів
       elements.forEach(el => {
         const key = el.dataset.i18n;
-        if (translations[lang][key]) {
+        if (translations[lang] && translations[lang][key]) {
           el.textContent = translations[lang][key];
         }
       });
     }
 
-    // Ініціалізація
+    // Беремо мову, яку людина вибрала на головній
     const savedLang = localStorage.getItem('siteLang') || 'en';
     setLanguage(savedLang);
-
-    // Клік
-    langButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        setLanguage(btn.dataset.lang);
-      });
-    });
   </script>
 
 </body>
