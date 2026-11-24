@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -161,9 +161,9 @@
   </div>
 
   <div class="content">
-    <h2 class="title">Passing By…</h2>
+    <h2 class="title" id="page-title">Passing By…</h2>
     
-    <div class="description">
+    <div class="description" id="page-description">
       <p>Sometimes you are simply going about your day, not looking for anything special. And suddenly, your attention is drawn to something — or someone. A gesture, a glance, an incidental detail… And all at once, you see something in it that goes beyond an ordinary passing moment. It happens in a curious way, entirely beyond your control. Sometimes you notice such moments; other times, you walk right past without seeing anything at all. As if someone unseen occasionally turns on a few frames of a quiet, deeply personal film just for you…</p>
       <p>These photographs capture precisely those moments — the ones I simply couldn’t walk past.</p>
     </div>
@@ -218,6 +218,20 @@
   </div>
 
   <script>
+    // ===== Мова =====
+    const savedLang = localStorage.getItem('siteLang') || 'en';
+    document.documentElement.lang = savedLang;
+
+    if (savedLang === 'uk') {
+      document.title = 'Проходячи повз… — Korenieva Tamara';
+      document.getElementById('page-title').textContent = 'Проходячи повз…';
+      document.getElementById('page-description').innerHTML = `
+        <p>Іноді ти просто йдеш у своїх справах, не шукаючи нічого особливого. І раптом твоя увага зупиняється на чомусь — або комусь. На жесті, погляді, випадковій деталі… І ти раптом бачиш у цьому щось більше, ніж просто випадковий епізод. Це відбувається дивним чином і зовсім не за твоїм бажанням. Одного разу ти помічаєш такі миті, іншого — проходиш повз, не побачивши нічого. Ніби хтось невидимий час від часу вмикає для тебе окремі кадри з тихого, дуже особистого фільму…</p>
+        <p>Ці фотографії — саме такі миті, попри яких я не змогла просто пройти.</p>
+      `;
+    }
+
+    // ===== Lightbox =====
     function openLightbox(img) {
       document.getElementById('lightbox-img').src = img.src;
       document.getElementById('lightbox').classList.add('active');
