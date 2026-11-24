@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -158,9 +158,9 @@
   </div>
 
   <div class="content">
-    <h2 class="title">Mrs. Hannusia</h2>
+    <h2 class="title" id="page-title">Mrs. Hannusia</h2>
     
-    <div class="description">
+    <div class="description" id="page-description">
       On the outskirts of the village of Rosilna, where the mountains begin, there once stood a small, lonely cottage. It was home to Mrs. Hannusia. One day, eleven people with cameras came to visit her… And she happily welcomed them, offering them apples. Some people leave an impression that lasts far longer than the moment itself. Mrs. Hannusia was one of them. Love shone in her eyes, kindness lived in her heart, and her simple hospitality held so much warmth that it has stayed with me through all these years.
     </div>
 
@@ -181,6 +181,20 @@
   </div>
 
   <script>
+    // ===== Мова =====
+    const savedLang = localStorage.getItem('siteLang') || 'en';
+    document.documentElement.lang = savedLang;
+
+    if (savedLang === 'uk') {
+      document.title = 'Пані Ганнуся — Korenieva Tamara';
+      document.getElementById('page-title').textContent = 'Пані Ганнуся';
+      document.getElementById('page-description').innerHTML = `
+        На околиці села Росільна, там, де починаються гори, була маленька самотня хатинка, в якій жила пані Ганнуся. Одного разу до неї завітало 11 людей з фотоапаратами… А вона залюбки пригощала їх яблуками.<br>
+        Є люди, зустріч із якими триває значно довше, ніж сама мить. Пані Ганнуся була саме такою. У її очах жила любов, у серці — доброта, а в простій гостинності було стільки душевного тепла, що його вистачило на багато років спогадів.
+      `;
+    }
+
+    // ===== Lightbox =====
     function openLightbox(img) {
       document.getElementById('lightbox-img').src = img.src;
       document.getElementById('lightbox').classList.add('active');
