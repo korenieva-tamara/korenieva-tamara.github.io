@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -121,9 +121,9 @@
   </div>
 
   <div class="content">
-    <h2 class="title">Sviatohirsk, Ukraine — Before 2022</h2>
+    <h2 class="title" id="page-title">Sviatohirsk, Ukraine — Before 2022</h2>
     
-    <p class="description">
+    <p class="description" id="page-description">
       Sviatohirsk is a small town in the Donetsk region, a place I always returned to with a special feeling. The chalk hills, the gentle flow of the Siverskyi Donets River, the forests, lakes, and monastery… All of this created a unique atmosphere of peace, harmony, and beauty. It was a place where I felt especially close to nature, where I wanted to pause, take in the surroundings, photograph, and simply be.<br><br>
       Now these photographs preserve for me not only the beauty of Sviatohirsk, but also the memory of a world that was dear to me. The war has brought destruction here, and it is very difficult to accept what has happened to a place that meant so much to me. I leave these photographs here as a tribute to Sviatohirsk, as I knew and loved it. The Sviatohirsk that will forever remain in my heart.
     </p>
@@ -166,6 +166,20 @@
   </div>
 
   <script>
+    // ===== Мова =====
+    const savedLang = localStorage.getItem('siteLang') || 'en';
+    document.documentElement.lang = savedLang;
+
+    if (savedLang === 'uk') {
+      document.title = 'Святогірськ, Україна — до 2022 — Korenieva Tamara';
+      document.getElementById('page-title').textContent = 'Святогірськ, Україна — до 2022';
+      document.getElementById('page-description').innerHTML = `
+        Святогірськ — невелике містечко на Донеччині, до якого я завжди поверталася з особливим почуттям. Крейдяні гори, тихий плин Сіверського Дінця, ліси, озера, монастир… Усе це створювало неповторну атмосферу спокою, гармонії та краси. Це було місце, де я почувалася особливо близькою до природи, де хотілося зупинитися, вдивлятися, фотографувати й просто бути.<br><br>
+        Тепер ці світлини зберігають для мене не лише красу Святогірська, а й пам’ять про світ, який був мені дорогим. Війна принесла сюди руйнування, і дуже важко прийняти те, що сталося з місцем, яке стільки значило для мене. Я залишаю ці фотографії тут — як пам’ять про Святогірськ, яким я його знала й любила. Таким, яким він назавжди залишиться в моєму серці.
+      `;
+    }
+
+    // ===== Lightbox =====
     function openLightbox(img) {
       document.getElementById('lightbox-img').src = img.src;
       document.getElementById('lightbox').classList.add('active');
