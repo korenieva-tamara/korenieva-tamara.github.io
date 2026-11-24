@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -121,9 +121,9 @@
   </div>
 
   <div class="content">
-    <h2 class="title">The Magical World of MACRO</h2>
+    <h2 class="title" id="page-title">The Magical World of MACRO</h2>
     
-    <p class="description">
+    <p class="description" id="page-description">
       One day, I began to notice what I had never seen before: buds unfolding, the first delicate flowers appearing, a tiny, fragile ladybug resting on a leaf, and morning dew sparkling like diamonds… That was how the wonderful world of macro photography entered my life.
     </p>
 
@@ -165,6 +165,20 @@
   </div>
 
   <script>
+    // ===== Мова =====
+    const savedLang = localStorage.getItem('siteLang') || 'en';
+    document.documentElement.lang = savedLang;
+
+    if (savedLang === 'uk') {
+      document.title = 'Чарівний світ МАКРО — Korenieva Tamara';
+      document.getElementById('page-title').textContent = 'Чарівний світ МАКРО';
+      document.getElementById('page-description').innerHTML = `
+        Одного разу я побачила те, чого раніше не помічала: як розпускаються бруньки, з’являються перші ніжні квіти, як на листочку причаїлося тендітне сонечко, а ранкова роса виблискує діамантами…<br>
+        Так у моєму житті з’явився дивовижний світ макрофотографії.
+      `;
+    }
+
+    // ===== Lightbox =====
     function openLightbox(img) {
       document.getElementById('lightbox-img').src = img.src;
       document.getElementById('lightbox').classList.add('active');
