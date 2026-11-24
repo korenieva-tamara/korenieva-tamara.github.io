@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,13 +64,14 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
     }
-.gallery img {
-  height: 260px;
-  width: auto;
-  display: block;
-  cursor: pointer;
-  transition: opacity 0.3s;
-}
+
+    .gallery img {
+      height: 260px;
+      width: auto;
+      display: block;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
 
     .gallery img:hover {
       opacity: 0.9;
@@ -125,9 +126,9 @@
   </div>
 
   <div class="content">
-    <h2 class="title">Collages</h2>
+    <h2 class="title" id="page-title">Collages</h2>
     
-    <p class="description">
+    <p class="description" id="page-description">
       By bringing photographs together in a collage, I seek to convey more than just a sequence of moments.<br>
       It is a way of weaving individual moments into a single story, capturing the mood, atmosphere,<br>
       and feelings of a particular moment in life.
@@ -147,6 +148,20 @@
   </div>
 
   <script>
+    // ===== Мова =====
+    const savedLang = localStorage.getItem('siteLang') || 'en';
+    document.documentElement.lang = savedLang;
+
+    if (savedLang === 'uk') {
+      document.title = 'Колажі — Korenieva Tamara';
+      document.getElementById('page-title').textContent = 'Колажі';
+      document.getElementById('page-description').innerHTML = `
+        Об’єднуючи світлини в колаж, я прагну передати не просто послідовність митей.<br>
+        Це спосіб зібрати окремі миті в єдину історію, передати настрій, атмосферу й відчуття певного моменту життя.
+      `;
+    }
+
+    // ===== Lightbox =====
     function openLightbox(img) {
       document.getElementById('lightbox-img').src = img.src;
       document.getElementById('lightbox').classList.add('active');
