@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -129,13 +129,27 @@
   </div>
 
   <div class="content">
-    <h2 class="title">Contact</h2>
-    <p class="text">
+    <h2 class="title" id="page-title">Contact</h2>
+    <p class="text" id="page-text">
       If you would like to get in touch,<br>
       feel free to write to me.
     </p>
     <a class="email" href="mailto:KTA0711gm@gmail.com">KTA0711gm@gmail.com</a>
   </div>
+
+  <script>
+    const savedLang = localStorage.getItem('siteLang') || 'en';
+    document.documentElement.lang = savedLang;
+
+    if (savedLang === 'uk') {
+      document.title = 'Контакти — Korenieva Tamara';
+      document.getElementById('page-title').textContent = 'Контакти';
+      document.getElementById('page-text').innerHTML = `
+        Якщо ви бажаєте зі мною зв’язатися,<br>
+        буду рада вашому повідомленню.
+      `;
+    }
+  </script>
 
 </body>
 </html>
