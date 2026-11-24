@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,11 +38,11 @@
       font-weight: normal;
     }
 
-   .content {
-  max-width: 1200px;
-  margin: 20px auto 60px;
-  padding: 0 40px;
-}
+    .content {
+      max-width: 1200px;
+      margin: 20px auto 60px;
+      padding: 0 40px;
+    }
 
     .title {
       font-size: 26px;
@@ -52,16 +52,16 @@
     }
 
     .description {
-  font-size: 14px;
-  color: #555;
-  max-width: 920px;
-  line-height: 1.45;
-  margin-bottom: 24px;
-}
+      font-size: 14px;
+      color: #555;
+      max-width: 920px;
+      line-height: 1.45;
+      margin-bottom: 24px;
+    }
 
     .gallery {
       display: grid;
-     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
       gap: 8px;
     }
 
@@ -121,9 +121,9 @@
   </div>
 
   <div class="content">
-    <h2 class="title">Rural Life</h2>
+    <h2 class="title" id="page-title">Rural Life</h2>
     
-    <p class="description">
+    <p class="description" id="page-description">
       Sometimes I wonder whether the photographs that feel special to me might go unnoticed by others. After all, behind every photograph there is a moment only you remember: your mood, your feelings, and that special excitement you experienced as you pressed the shutter. My grandmother, my father’s mother, lived in a village in the Sumy region of Ukraine. Every summer, when I was a child, I would travel there to visit her. That is where my love for the countryside, its people, and the unique atmosphere of rural life began. It is a completely different world, where everything is close at hand: people, animals, birds, insects… And the sky seems closer to the earth. During the day, the clouds seem almost ready to touch the ground, while at night you can spend hours gazing at the stars. I have always felt something special there — a sense of space and freedom. Even now, I keep searching for those same scents from my grandmother’s garden — tomatoes, cucumbers, dill, freshly dug potatoes… Yet no scent can bring me back there completely. Perhaps that is why I photograph rural life. These photographs hold more than what I see; they also hold what has stayed with me since childhood: the warmth of memories, a sense of freedom, and a love for a simple, authentic way of life.
     </p>
 
@@ -169,6 +169,17 @@
   </div>
 
   <script>
+    // ===== Мова =====
+    const savedLang = localStorage.getItem('siteLang') || 'en';
+    document.documentElement.lang = savedLang;
+
+    if (savedLang === 'uk') {
+      document.title = 'В селі — Korenieva Tamara';
+      document.getElementById('page-title').textContent = 'В селі';
+      document.getElementById('page-description').textContent = 'Іноді я думаю про те, що фотографії, які здаються особливими мені, можуть залишитися непоміченими іншими. Адже за кожним знімком є мить, яку пам’ятаєш саме ти: свій настрій, почуття, те особливе хвилювання, яке переживала, натискаючи на кнопку камери. Моя бабуся, татова мама, жила в селі на Сумщині. Щоліта в дитинстві я їхала до неї в гості. Саме звідти — моя любов до сільської природи, людей і неповторної атмосфери сільського життя. Це зовсім інший світ, де все поруч: люди, тварини, птахи, комахи… І небо ніби ближче до землі. Вдень здається, що хмари ось-ось торкнуться її, а вночі можна довго роздивлятися зорі. Тут я завжди відчувала щось особливе — простір і свободу. Я й досі намагаюся знайти ті самі аромати з бабусиного городу — помідорів, огірків, кропу, свіжої картоплі… Але жоден запах не повертає мене туди повністю. Мабуть, тому я й фотографую сільське життя. У цих світлинах є не лише побачене, а й те, що залишилося зі мною з дитинства: тепло спогадів, відчуття свободи й любов до простого, справжнього життя.';
+    }
+
+    // ===== Lightbox =====
     function openLightbox(img) {
       document.getElementById('lightbox-img').src = img.src;
       document.getElementById('lightbox').classList.add('active');
