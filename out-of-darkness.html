@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -133,9 +133,9 @@
   </div>
 
   <div class="content">
-    <h2 class="title">Out of Darkness.</h2>
+    <h2 class="title" id="page-title">Out of Darkness.</h2>
     
-    <p class="description">
+    <p class="description" id="page-description">
       Black is not a color. In physics, it is the absence of light, the absence of color. Emptiness.<br>
       Perhaps that is why black feels so close to those states in which we seem to feel nothing at all:<br>
       sadness, exhaustion, silence… And yet, even in black, light always appears.<br>
@@ -158,6 +158,25 @@
   </div>
 
   <script>
+    // ===== Мова =====
+    const savedLang = localStorage.getItem('siteLang') || 'en';
+    document.documentElement.lang = savedLang;
+
+    if (savedLang === 'uk') {
+      document.title = 'З темряви… — Korenieva Tamara';
+      document.getElementById('page-title').textContent = 'З темряви…';
+      document.getElementById('page-description').innerHTML = `
+        Чорний — це не колір.<br>
+        У фізиці це відсутність світла, відсутність кольору. Порожнеча.<br>
+        Мабуть, тому чорний так близький до станів, у яких ніби нічого не відчуваєш:<br>
+        сум, втома, тиша…<br>
+        Але навіть у чорному завжди з’являється світло.<br>
+        Ледь помітне. Тихе.<br>
+        Воно торкається пелюсток, крапель, скла — і раптом народжується колір.
+      `;
+    }
+
+    // ===== Lightbox =====
     function openLightbox(img) {
       document.getElementById('lightbox-img').src = img.src;
       document.getElementById('lightbox').classList.add('active');
