@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -128,9 +128,9 @@
   </div>
 
   <div class="content">
-    <h2 class="title">My heart is with them forever…</h2>
+    <h2 class="title" id="page-title">My heart is with them forever…</h2>
 
-    <div class="epigraph">
+    <div class="epigraph" id="page-epigraph">
       <p>During the two years I spent volunteering at the hospital, I met many young men. Each of them had their own story, their own pain, their own struggles, and their own path forward.</p>
       <p>I remember every one of them. Our conversations, the moments we shared, our walks, photographs, songs… I remember their smiles and their eyes, the moments when things felt a little easier, and those when I especially wanted to be there for them.</p>
       <p>I love each and every one of them. And I am genuinely happy whenever someone finds their place in this new chapter of life as a veteran, discovers new opportunities, returns to something they love, or finds something entirely new. I rejoice in every step forward, big or small.</p>
@@ -145,8 +145,8 @@
       <div class="video-wrapper">
         <iframe src="https://www.youtube.com/embed/cAtdLJLmYX0" allowfullscreen></iframe>
       </div>
-      <div class="caption">Outdoor photography session near the hospital</div>
-      <div class="music">Music: Pyrih i Batig — “Haiy shumlyat” (lyrics by Pavlo Tychyna)</div>
+      <div class="caption" id="cap-1">Outdoor photography session near the hospital</div>
+      <div class="music" id="mus-1">Music: Pyrih i Batig — “Haiy shumlyat” (lyrics by Pavlo Tychyna)</div>
     </div>
 
     <!-- Video 2 -->
@@ -154,8 +154,8 @@
       <div class="video-wrapper">
         <iframe src="https://www.youtube.com/embed/XD6SrYU2DPI" allowfullscreen></iframe>
       </div>
-      <div class="caption">Photographing flowers by the hospital flowerbed with Roma in spring</div>
-      <div class="music">Music: Nina Matvienko — “Kvitka-dusha”</div>
+      <div class="caption" id="cap-2">Photographing flowers by the hospital flowerbed with Roma in spring</div>
+      <div class="music" id="mus-2">Music: Nina Matvienko — “Kvitka-dusha”</div>
     </div>
 
     <!-- Video 3 -->
@@ -163,13 +163,39 @@
       <div class="video-wrapper">
         <iframe src="https://www.youtube.com/embed/6CLDTzqZ4zw" allowfullscreen></iframe>
       </div>
-      <div class="caption">Oleksandr Tereshchenko, defender of Donetsk Airport, visiting the hospital</div>
-      <div class="music">Music: Anastasiia Brezitska — “Liudy-Tytany”</div>
+      <div class="caption" id="cap-3">Oleksandr Tereshchenko, defender of Donetsk Airport, visiting the hospital</div>
+      <div class="music" id="mus-3">Music: Anastasiia Brezitska — “Liudy-Tytany”</div>
     </div>
 
   </div>
 
+  <script>
+    const savedLang = localStorage.getItem('siteLang') || 'en';
+    document.documentElement.lang = savedLang;
+
+    if (savedLang === 'uk') {
+      document.title = 'Моє серце назавжди з ними… — Korenieva Tamara';
+      document.getElementById('page-title').textContent = 'Моє серце назавжди з ними…';
+      document.getElementById('page-epigraph').innerHTML = `
+        <p>За два роки волонтерства в госпіталі я познайомилася з багатьма молодими хлопцями. У кожного з них була своя історія, свій біль, свої випробування і свій шлях уперед.</p>
+        <p>Я пам’ятаю кожного з них. Наші розмови, миті, проведені разом, прогулянки, фотографії, пісні… Пам’ятаю їхні усмішки й очі, моменти, коли ставало трохи легше, і ті миті, коли мені особливо хотілося бути поруч.</p>
+        <p>Я люблю кожного з них. І щиро радію щоразу, коли хтось знаходить своє місце в новому розділі життя — житті ветерана, відкриває для себе нові можливості, повертається до улюбленої справи або знаходить щось зовсім нове. Радію кожному кроку вперед — великому чи маленькому.</p>
+        <p>І мені дуже боляче, коли щось не складається, коли життя підкидає людині чергове непросте випробування. Бо за кожною з цих історій я бачу не просто когось, із ким колись познайомилася, а людину, яка стала мені близькою.</p>
+        <p>Мабуть, це найцінніше, що я винесла з тих двох років: люди не зникають із нашого життя лише тому, що спільні дні залишилися позаду або змінилися обставини.</p>
+        <p>Вони залишаються в нашій пам’яті, на фотографіях, у відео, у теплих спогадах. І в наших серцях.</p>
+        <p>Дякую кожному з вас за нашу зустріч. За вашу довіру. За те, що дозволили мені стати маленькою частиною вашого життя.</p>
+      `;
+
+      document.getElementById('cap-1').textContent = 'Виїзна фотосесія біля госпіталю';
+      document.getElementById('mus-1').textContent = 'Музика: «Пиріг і Батіг» — «Гаї шумлять» (слова Павла Тичини)';
+
+      document.getElementById('cap-2').textContent = 'Фотографуємо квіти біля клумби госпіталю з Ромою навесні';
+      document.getElementById('mus-2').textContent = 'Музика: Ніна Матвієнко — «Квітка-душа»';
+
+      document.getElementById('cap-3').textContent = 'Олександр Терещенко, захисник Донецького аеропорту, в гостях у госпіталі';
+      document.getElementById('mus-3').textContent = 'Музика: Анастасія Брезіцька — «Люди-Титани»';
+    }
+  </script>
+
 </body>
 </html>
-
-
