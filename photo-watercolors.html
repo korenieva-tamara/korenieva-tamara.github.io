@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>In Search of Color — Korenieva Tamara</title>
+  <title>Photo Watercolors — Korenieva Tamara</title>
   <style>
     body {
       margin: 0;
@@ -40,14 +40,14 @@
 
     .content {
       max-width: 1200px;
-      margin: 40px auto 80px;
+      margin: 30px auto 80px;
       padding: 0 40px;
     }
 
     .title {
-      font-size: 28px;
+      font-size: 26px;
       font-weight: normal;
-      margin-bottom: 18px;
+      margin-bottom: 12px;
       color: #333;
     }
 
@@ -55,61 +55,34 @@
       color: #b22222;
     }
 
-    .quote {
+    .description {
       font-size: 15px;
-      color: #6b7c3a;
-      max-width: 620px;
-      line-height: 1.5;
-      margin-bottom: 8px;
-    }
-
-    .author {
-      font-size: 14px;
-      color: #6b7c3a;
-      margin-bottom: 16px;
-    }
-
-    .personal {
-      font-family: Georgia, serif;
-      font-style: italic;
-      font-size: 16px;
-      color: #c9a227;
-      margin-bottom: 40px;
+      color: #555;
+      max-width: 780px;
+      line-height: 1.55;
+      margin-bottom: 36px;
     }
 
     .gallery {
       display: grid;
-      grid-template-columns: 1fr 1fr 1.15fr;
-      grid-template-rows: auto auto;
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
     }
 
     .gallery img {
       width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
       display: block;
       cursor: pointer;
       transition: opacity 0.3s;
-      object-fit: cover;
     }
 
     .gallery img:hover {
-      opacity: 0.9;
+      opacity: 0.88;
     }
 
-    .img1 { grid-column: 1; grid-row: 1; }
-    .img2 { grid-column: 2; grid-row: 1; }
-    .img3 { grid-column: 1; grid-row: 2; }
-    .img4 { grid-column: 2; grid-row: 2; }
-    .img5 { 
-      grid-column: 3; 
-      grid-row: 1 / 3; 
-      height: 100%;
-      max-height: 520px;
-      object-fit: cover;
-      align-self: start;
-    }
-
-    /* Повноекранний перегляд */
+    /* Lightbox */
     .lightbox {
       display: none;
       position: fixed;
@@ -117,7 +90,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.92);
+      background: rgba(0,0,0,0.93);
       z-index: 1000;
       justify-content: center;
       align-items: center;
@@ -128,7 +101,7 @@
     }
 
     .lightbox img {
-      max-width: 90%;
+      max-width: 92%;
       max-height: 90%;
       object-fit: contain;
     }
@@ -152,21 +125,43 @@
   </div>
 
   <div class="content">
-    <h2 class="title" id="page-title">In Search of <span class="accent">Color</span>...</h2>
+    <h2 class="title" id="page-title"><span class="accent">Photo</span> Watercolors</h2>
     
-    <p class="quote" id="page-quote">
-      “Color is an entire region of the electromagnetic spectrum, while a specific color corresponds to a single wavelength within that spectrum, measurable with a monochromator.”
+    <p class="description" id="page-description">
+      Photo Watercolors — Photography on the Edge of Painting.<br>
+      An original technique in which I paint over the background, clearing the space for what matters most.<br>
+      This is my way of doing more than simply capturing what I see — it is a way of expressing my own sense of beauty.
     </p>
-    <p class="author" id="page-author">B. Jenichen</p>
-    
-    <p class="personal" id="page-personal">But to me, color remains an unfathomable mystery...</p>
 
     <div class="gallery">
-      <img src="color-green.jpg" alt="Green" class="img1" onclick="openLightbox(this)">
-      <img src="color-red.jpg" alt="Red" class="img2" onclick="openLightbox(this)">
-      <img src="color-yellow.jpg" alt="Yellow" class="img3" onclick="openLightbox(this)">
-      <img src="color-leaves.jpg" alt="Leaves" class="img4" onclick="openLightbox(this)">
-      <img src="color-tall.jpg" alt="Tall" class="img5" onclick="openLightbox(this)">
+      <img src="1.jpg" alt="1" onclick="openLightbox(this)">
+      <img src="2.jpg" alt="2" onclick="openLightbox(this)">
+      <img src="3.jpg" alt="3" onclick="openLightbox(this)">
+      <img src="4.jpg" alt="4" onclick="openLightbox(this)">
+      <img src="5.jpg" alt="5" onclick="openLightbox(this)">
+      <img src="6.jpg" alt="6" onclick="openLightbox(this)">
+      <img src="7.jpg" alt="7" onclick="openLightbox(this)">
+      <img src="8.jpg" alt="8" onclick="openLightbox(this)">
+      <img src="9.jpg" alt="9" onclick="openLightbox(this)">
+      <img src="10.jpg" alt="10" onclick="openLightbox(this)">
+      <img src="11.jpg" alt="11" onclick="openLightbox(this)">
+      <img src="12.jpg" alt="12" onclick="openLightbox(this)">
+      <img src="13.jpg" alt="13" onclick="openLightbox(this)">
+      <img src="14.jpg" alt="14" onclick="openLightbox(this)">
+      <img src="15.jpg" alt="15" onclick="openLightbox(this)">
+      <img src="16.jpg" alt="16" onclick="openLightbox(this)">
+      <img src="17.jpg" alt="17" onclick="openLightbox(this)">
+      <img src="18.jpg" alt="18" onclick="openLightbox(this)">
+      <img src="19.jpg" alt="19" onclick="openLightbox(this)">
+      <img src="20.jpg" alt="20" onclick="openLightbox(this)">
+      <img src="21.jpg" alt="21" onclick="openLightbox(this)">
+      <img src="22.jpg" alt="22" onclick="openLightbox(this)">
+      <img src="23.jpg" alt="23" onclick="openLightbox(this)">
+      <img src="24.jpg" alt="24" onclick="openLightbox(this)">
+      <img src="25.jpg" alt="25" onclick="openLightbox(this)">
+      <img src="26.jpg" alt="26" onclick="openLightbox(this)">
+      <img src="27.jpg" alt="27" onclick="openLightbox(this)">
+      <img src="28.jpg" alt="28" onclick="openLightbox(this)">
     </div>
   </div>
 
@@ -181,11 +176,13 @@
     document.documentElement.lang = savedLang;
 
     if (savedLang === 'uk') {
-      document.title = 'У пошуках кольору… — Korenieva Tamara';
-      document.getElementById('page-title').innerHTML = 'У пошуках <span class="accent">кольору</span>…';
-      document.getElementById('page-quote').textContent = '«Колір — це ціла область електромагнітного спектра, тоді як конкретний колір відповідає одній довжині хвилі в межах цього спектра, яку можна виміряти за допомогою монохроматора».';
-      document.getElementById('page-author').textContent = 'Б. Єніхен';
-      document.getElementById('page-personal').textContent = 'Але для мене колір і досі залишається незбагненною таємницею…';
+      document.title = 'Фотоакварелі — Korenieva Tamara';
+      document.getElementById('page-title').innerHTML = '<span class="accent">Фото</span>акварелі';
+      document.getElementById('page-description').innerHTML = `
+        Фотоакварелі — фотографія на межі з живописом.<br>
+        Авторська техніка, у якій я замальовую фон, звільняючи простір для головного.<br>
+        Це мій спосіб не просто зафіксувати побачене, а передати власне відчуття краси.
+      `;
     }
 
     // ===== Lightbox =====
